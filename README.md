@@ -87,3 +87,15 @@ dag.run()
 ```
 dag.result
 ```
+
+### Define new function in StrEngine
+```c++
+// You need to define a public function in class StrEngine
+string setValue(const string &str1)
+{
+    return str1;
+}
+
+// And register it in PYBIND11_MODULE
+.def("setValue", &StrEngine::setValue)
+```
